@@ -1,7 +1,7 @@
 name: Deployment Workflow
 on:
   push:
-    branches: [ ci-cd-update ]
+    branches: [ master ]
 
 jobs:
   deploy:

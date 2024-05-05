@@ -5,11 +5,11 @@ export default {
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        mainPt: resolve(__dirname, 'index-pt.html'),
-        about: resolve(__dirname, 'about.html'),
-        aboutPt: resolve(__dirname, 'sobre.html'),
-        work: resolve(__dirname, 'work.html'),
-        workPt: resolve(__dirname, 'trabalhos.html'),
+        mainPt: resolve(__dirname, 'pt/index.html'),
+        about: resolve(__dirname, 'about/index.html'),
+        aboutPt: resolve(__dirname, 'sobre/index.html'),
+        work: resolve(__dirname, 'work/index.html'),
+        workPt: resolve(__dirname, 'trabalhos/index.html'),
       }
     }
   }

@@ -1,0 +1,38 @@
+name: Deployment Workflow
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    name: Deploy application
+    runs-on: ubuntu-latest
+    steps:
+    - name: Build and deploy
+      uses: appleboy/ssh-action@master
+      env:
+        CONTAINER: my-portfolio-design
+        IMAGE: my-portfolio-design
+        PROJECTDIR: webdesign
+        REPO: git@github.com:Danykesia/webdesign.git
+        TAG: latest
+        WORKDIR: portfolio/js-projects
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        port: ${{ secrets.PORT }}
+        envs: CONTAINER, IMAGE, PROJECTDIR, REPO, TAG, WORKDIR
+        script: |
+          rm -rf $WORKDIR/$PROJECTDIR
+          mkdir -p $WORKDIR
+          cd $WORKDIR
+          git clone $REPO
+          cd $PROJECTDIR
+          cp .env.example .env
+          source .env
+          docker build -t $IMAGE:$TAG .
+          docker stop $CONTAINER
+          docker rm $CONTAINER
+          docker run -d --restart always --name $CONTAINER -p $PORT:80 $IMAGE:$TAG
+          docker system prune -f

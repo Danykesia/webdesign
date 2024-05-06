@@ -127,8 +127,9 @@
       }
 
       .start[data-astro-cid-bbe6dxrz] {
-        flex-direction: row;
+        flex-direction: column;
         gap: 50px;
+        text-align: start;
       }
 
       .wrapper.stack {
@@ -182,7 +183,17 @@
         text-decoration-color: currentColor
       }
 
+
+      @media(min-width: 800px) {
+        header img {
+          width: 50%;
+        }
+      }
+
       @media (min-width: 50em) {
+        .start[data-astro-cid-bbe6dxrz] {
+          flex-direction: row;
+        }
         .about[data-astro-cid-kh7btl4r] {
           display: grid;
           grid-template-columns: 1fr 60% 1fr
@@ -202,6 +213,12 @@
         vertical-align: middle;
         width: var(--size, 1em);
         height: var(--size, 1em)
+      }
+
+      @media(min-width: 1280px) {
+        header img {
+          width: revert-layer;
+        }
       }
     </style>
     <script type="module">

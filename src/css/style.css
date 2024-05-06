@@ -597,7 +597,7 @@ footer[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]:focus {
 @media (min-width: 50em) {
   footer[data-astro-cid-sz7xmlte] {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     padding: 2.5rem 5rem;
   }
   .group[data-astro-cid-sz7xmlte] {

@@ -14,3 +14,25 @@ window.onclick = function(e){
     hiddenDesktopFlag.classList.remove('show');
   }
 }
+
+const htmlTheme = document.querySelector('html');
+const themeToggle = document.querySelector('.theme-toggle button');
+const logo = document.querySelector('.logo');
+
+window.onload = function() {
+  if (htmlTheme.classList.contains('theme-dark')) {
+    logo.src = '/img/logo-light.svg';
+  };
+  if (!htmlTheme.classList.contains('theme-dark')) {
+    logo.src = '/img/logo-dark.svg';
+  }
+}
+
+themeToggle.addEventListener('click', () => {
+  if (htmlTheme.classList.contains('theme-dark')) {
+    logo.src = '/img/logo-light.svg';
+  };
+  if (!htmlTheme.classList.contains('theme-dark')) {
+    logo.src = '/img/logo-dark.svg';
+  }
+});

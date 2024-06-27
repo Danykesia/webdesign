@@ -22,17 +22,17 @@ const logo = document.querySelector('.logo');
 window.onload = function() {
   if (htmlTheme.classList.contains('theme-dark')) {
     logo.src = '/img/logo-light.svg';
-  };
+  }
   if (!htmlTheme.classList.contains('theme-dark')) {
     logo.src = '/img/logo-dark.svg';
   }
 }
 
 themeToggle.addEventListener('click', () => {
-  if (htmlTheme.classList.contains('theme-dark')) {
+  if (logo.src.includes('/img/logo-dark.svg')) {
     logo.src = '/img/logo-light.svg';
-  };
-  if (!htmlTheme.classList.contains('theme-dark')) {
+  }
+  else {
     logo.src = '/img/logo-dark.svg';
   }
 });

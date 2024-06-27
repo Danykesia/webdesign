@@ -395,6 +395,7 @@ nav[data-astro-cid-dmqpwcec] {
   justify-content: space-between;
   gap: 0.5rem;
   padding: 1.5rem;
+  align-items: center;
 }
 .site-title[data-astro-cid-dmqpwcec] {
   display: flex;
